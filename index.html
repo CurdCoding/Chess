@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio
+      id="moveSound"
+      src="http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3"
+      preload="auto"
+    ></audio>
+    <audio
+      id="captureSound"
+      src="http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3"
+      preload="auto"
+    ></audio>
+    <audio
+      id="checkSound"
+      src="move-check.mp3"
+      preload="auto"
+    ></audio>
+    <div class="chessBoard">
+      <button
+        class="white"
+        id="square"
+        onclick="
+            count++;
+            box = 0;
+            pieceMovement();
+            "
+      >
+        <img class="blackRook" src="Images/LiBR.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 1;
+        pieceMovement();
+        "
+      >
+        <img class="blackKnight1" src="Images/LiBN.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 2;
+        pieceMovement();
+        "
+      >
+        <img class="blackBishop1" src="Images/LiBB.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 3;
+        pieceMovement();
+        "
+      >
+        <img class="blackQueen" src="Images/LiBQ.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 4;
+        pieceMovement();
+        "
+      >
+        <img class="blackKing" src="Images/LiBK.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 5;
+        pieceMovement();
+        "
+      >
+        <img class="blackBishop2" src="Images/LiBB.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 6;
+        pieceMovement();
+        "
+      >
+        <img class="blackKnight2" src="Images/LiBN.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 7;
+        pieceMovement();
+        "
+      >
+        <img class="blackRook2" src="Images/LiBR.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 8;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn1" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 9;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn2" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 10;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn3" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 11;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn4" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 12;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn5" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 13;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn6" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 14;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn7" src="Images/LiBP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 15;
+        pieceMovement();
+        "
+      >
+        <img class="blackPawn8" src="Images/LiBP.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 16;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 17;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 18;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 19;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 20;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 21;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 22;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 23;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 24;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 25;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 26;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 27;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 28;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 29;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 30;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 31;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 32;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 33;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 34;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 35;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 36;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 37;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 38;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 39;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 40;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 41;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 42;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 43;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 44;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 45;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 46;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 47;
+        pieceMovement();
+        "
+      >
+        <img src="Images/transparent.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 48;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn1" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 49;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn2" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 50;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn3" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 51;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn4" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 52;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn5" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 53;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn6" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 54;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn7" src="Images/LiWP.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 55;
+        pieceMovement();
+        "
+      >
+        <img class="whitePawn8" src="Images/LiWP.png" id="piece" />
+      </button>
+      <br />
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 56;
+        pieceMovement();
+        "
+      >
+        <img class="whiteRook1" src="Images/LiWR.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 57;
+        pieceMovement();
+        "
+      >
+        <img class="whiteKnight1" src="Images/LiWN.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;  
+        box = 58;
+        pieceMovement();
+        "
+      >
+        <img class="whiteBishop1" src="Images/LiWB.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;     
+        box = 59;
+        pieceMovement();
+        "
+      >
+        <img class="whiteQueen" src="Images/LiWQ.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 60;
+        pieceMovement();
+        "
+      >
+        <img class="whiteKing" src="Images/LiWK.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 61;
+        pieceMovement();
+        "
+      >
+        <img class="whiteBishop2" src="Images/LiWB.png" id="piece" />
+      </button>
+      <button
+        class="black"
+        id="square"
+        onclick="count++;
+        box = 62;
+        pieceMovement();
+        "
+      >
+        <img class="whiteKnight2" src="Images/LiWN.png" id="piece" />
+      </button>
+      <button
+        class="white"
+        id="square"
+        onclick="count++;
+        box = 63;
+        pieceMovement();
+        "
+      >
+        <img class="whiteRook2" src="Images/LiWR.png" id="piece" />
+      </button>
+
+      <br />
+    </div>
+    <button class="fen" onclick="
+    fenGenerator();
+    ">FEN</button>
+    <p class="fenBox"></p>
+  </body>
+  <script src="script.js"></script>
+</html>
