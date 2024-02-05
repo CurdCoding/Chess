@@ -1,6 +1,7 @@
 .chessBoard {
-  margin-left: 2%;
+  margin-left: 4%;
   width: 750px;
+  margin-top: 1%;
 }
 .black,
 .white {
