@@ -2315,34 +2315,6 @@ function pieceMovement() {
         valArray[box] = lastVal;
         valArray[lastBox] = 0;
         chance++;
-        for (let i = 0; i < blackButtons.length; i++) {
-          blackButtons[i].style.backgroundColor = "#A97A65";
-          whiteButtons[i].style.backgroundColor = "#F1D9C0";
-        }
-        if (whiteKingCheck == true) {
-          for (let b = 0; b < 64; b++) {
-            if (valArray[b] == 7) {
-              buttonBox[b].style.backgroundColor = "red";
-
-              checkSound.play();
-              checkSound.play();
-              checkSound.play();
-              checkSound.play();
-            }
-          }
-        }
-        if (blackKingCheck == true) {
-          for (let b = 0; b < 64; b++) {
-            if (valArray[b] == -7) {
-              buttonBox[b].style.backgroundColor = "red";
-
-              checkSound.play();
-              checkSound.play();
-              checkSound.play();
-              checkSound.play();
-            }
-          }
-        }
       }
     }
   }
